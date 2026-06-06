@@ -30,9 +30,9 @@ python pySecKit.py <tool> --help
 Scan open TCP ports on a target host.
 
 ```bash
-python pySecKit.py portscan -t 192.168.1.1 -p 1-1024
-python pySecKit.py portscan -t 192.168.1.1 -p 20-80 --threads 200 --timeout 1.5
-python pySecKit.py portscan -t 192.168.1.1 -p 1-1024 -o results.json
+python pySecKit.py portscan -t <target-ip> -p 1-1024
+python pySecKit.py portscan -t <target-ip> -p 20-80 --threads 200 --timeout 1.5
+python pySecKit.py portscan -t <target-ip> -p 1-1024 -o results.json
 ```
 
 ### Hash Cracker
@@ -84,7 +84,7 @@ python pySecKit.py vault
 
 Example:
 ```bash
-python pySecKit.py portscan -t 192.168.1.1 -p 1-1024 --log-level DEBUG
+python pySecKit.py portscan -t <target-ip> -p 1-1024 --log-level DEBUG
 ```
 
 ---
