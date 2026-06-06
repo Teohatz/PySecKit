@@ -2,7 +2,11 @@
 
 import argparse
 import sys
+import os
 import logging
+
+# Ensure modules are found regardless of where the script is called from
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from Hash_cracker.hash_cracker import run_hash_cracker
 from Password_manager.password_manager import run_password_manager
@@ -37,10 +41,11 @@ def print_banner():
 
 
 def print_tool_list():
-    print("Available tools:\n")
-    for name, desc in TOOLS.items():
-        print(f"  {name:<12} {desc}")
-    print("\nRun 'python pySecKit.py <tool> --help' for usage details.")
+    print("  Available tools:\n")
+    for i, (name, desc) in enumerate(TOOLS.items(), 1):
+        print(f"  [{i}] {name:<12} {desc}")
+    print("\n  Usage  : python pySecKit.py <tool> --help")
+    print("  Example: python pySecKit.py portscan --help\n")
 
 
 def setup_logging(level: str):
